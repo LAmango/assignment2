@@ -1,0 +1,53 @@
+a)
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (7/7), 806 bytes | 806.00 KiB/s, done.
+Total 7 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/LAmango/assignment2.git
+   f4975e5..f7d3bf5  master -> master
+
+b)
+8
+git rev-list --count HEAD
+
+c)
+Wed Sep 25 18:13:31 2019wed Sep 25 18:13:30 2019
+git log -- .gitignore
+
+d)
+1 - Branches allow developers work on the same code and save their progress without copying over
+eachother's work.
+2 - They help set up a workflow that devs have to follow. First they create a new branch for their
+new feature. Then then  merge it to the developed branch and after some testing it can be merged
+to the master branch.
+
+e)
+'git log' shows a list of all previous commits and their info while 'git status' give specific
+info about what you afe currently working on, what was added, what was modified and what was deleted.
+
+f)
+git log -- Vehicle.h
+
+g)
+git log --grep=file
+
+h)
+Inheritance is when you have something broad like 'Car' and you take in all its attributes and
+add mode specific things like model and year.
+Polymorphism, for example, is to modify a behavior by  overriding a previously created function.
+Encapsulation could be a function that takes in different types of 'cars' but since they all have
+the same functions we can call them and take in their different outcomes.
+
+i)
+In D&L all the devs are pulling directly from the main repo but they push to a different repo
+that does checks on the code. That then gets push to a leader repo that pushes to the main repo.
+In IM each dev has local repos, one they pull from the main repo and one that pulls from that one
+which they modify. that way every dev has a local copy of the main repo without any changes to it.
+Then they push their changes to an intermediary repo that then integrates with the main repo.
+
+j)
+With so many devs working on a lot of overlapping code, it would make sense to slowly integrate
+the changes together within the lieutenant repos. That way, if issues arise, they can be solved before passing it up to the dictator branch.
