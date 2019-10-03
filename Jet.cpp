@@ -32,7 +32,6 @@ double Jet::mileageEstimate(double time) {
         double boost = mileage*.055;
         mileage=+boost;
     }
-    mileage= mileage  * 60;
     return mileage*time;
 }
 
