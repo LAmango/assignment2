@@ -2,46 +2,42 @@
 // Created by Esteban Parra on 9/5/19.
 //
 
-#include "Car.h"
+#include "Jet.h"
 
-Car::Car() {
-    myEngineSize = "unknown";
+Jet::Jet() {
     setBrand("Custom");
     setModel("VTx");
 }
 
-Car::Car(string brand, string model, string fuelType, string engineSize) {
+Jet::Jet(string brand, string model, string fuelType, int numberOfEngines) {
     setBrand(brand);
     setModel(model);
     setFuelType(fuelType);
-    setEngineSize(engineSize);
+    setNumberOfEngines(numberOfEngines);
 }
 
-Car::~Car() = default;
+Jet::~Jet() = default;
 
-string Car::getEngineSize() {
-    return myEngineSize;
+int Jet::getNumberOfEngines() {
+    return numberOfEngines;
 }
 
-void Car::setEngineSize(string engineSize) {
-    if (engineSize == "unknown" || engineSize == "small" ||
-        engineSize == "medium" || engineSize == "grande") {
-        myEngineSize = engineSize;
-    } else {
-        myEngineSize = "unknown";
+void Jet::setNumberOfEngines(int engine) {
+    numberOfEngines = engine;
+}
+
+double Jet::mileageEstimate(double time) {
+    double mileage = rand() % 40 + 60; 
+	if(fuelType == "Rocket" && getNumberOfEngines() == 2){
+        double boost = mileage*.055;
+        mileage=+boost;
     }
-
+    mileage= mileage  * 60;
+    return mileage*time;
 }
 
-double Car::mileageEstimate(double time) {
-    double mileage = 15 * time;
-    if (fuelType == "electricity") {
-        mileage += mileage * 0.05;
-    }
-    return mileage;
-}
-
-string Car::toString() {
-    return "-> Car\n" + PoweredVehicle::toString() + "\n\tEngine Size: " +
-           getEngineSize();
+string Jet::toString() {
+    int engines = getNumberOfEngines();
+    return "-> Jet\n" + PoweredVehicle::toString() + "\n\tEngine Count: " + std::to_string(engines);
+           
 }

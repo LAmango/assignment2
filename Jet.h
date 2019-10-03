@@ -7,7 +7,7 @@
 
 #include "PoweredVehicle.h"
 
-class Jet: public PoweredVehicle {
+class Jet : public PoweredVehicle {
 
 private:
     int numberOfEngines;
@@ -19,8 +19,8 @@ public:
                  int numberOfEngines = 1);
 
     virtual ~Jet();
-    string getEngineCount();
-    void setEngineCount(int engineCount);
+    int getNumberOfEngines();
+    void setNumberOfEngines(int engines);
     virtual double mileageEstimate(double time);
     virtual string toString();
 };
