@@ -51,3 +51,9 @@ Then they push their changes to an intermediary repo that then integrates with t
 j)
 With so many devs working on a lot of overlapping code, it would make sense to slowly integrate
 the changes together within the lieutenant repos. That way, if issues arise, they can be solved before passing it up to the dictator branch.
+
+
+5)
+The driving simulator is using encapsulation because it it taking all of the common methods of all the classes and
+calling them in a loop. This allows testing to be easier because all we had to do was add our class instances to the end
+of the vehiclearray.
